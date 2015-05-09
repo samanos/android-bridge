@@ -13,7 +13,7 @@
 # limitations under the License.
 #
 LOCAL_PATH := $(call my-dir)
-LIBUSB_SRC := /home/martynas/projects/libusb
+LIBUSB_SRC := libusb
 
 include $(CLEAR_VARS)
 

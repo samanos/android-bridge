@@ -67,7 +67,7 @@ static jstring get_devs(JNIEnv* env, libusb_device **devs)
   return devices;
 }
 
-jstring Java_lt_dualem_UsbLogger_listDevs(JNIEnv* env, jobject thiz)
+jstring Java_lt_dualem_Udal_listDevs(JNIEnv* env, jobject thiz)
 {
   libusb_device **devs;
   int r;
