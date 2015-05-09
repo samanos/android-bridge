@@ -3,12 +3,16 @@
       package="io.github.samanos"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="3" />
-    <application android:label="@string/app_name">
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-sdk android:minSdkVersion="15" />
+
+    <application android:label="@string/app_name" android:allowBackup="true">
         <activity android:name=".AndroidBridge"
                   android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

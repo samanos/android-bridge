@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0-rc4'
+        classpath 'com.android.tools.build:gradle:1.2.2'
     }
 }
 
@@ -12,22 +12,5 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 15
-    buildToolsVersion "21.1.2"
-
-    sourceSets.main {
-        jniLibs.srcDir 'libs'
-    }
-
-    productFlavors {
-        arm {
-            ndk {
-                abiFilters "armeabi", "armeabi-v7a"
-            }
-        }
-        x86 {
-            ndk {
-                abiFilter "x86"
-            }
-        }
-    }
+    buildToolsVersion "22.0.1"
 }
