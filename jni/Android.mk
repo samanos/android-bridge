@@ -13,16 +13,21 @@
 # limitations under the License.
 #
 LOCAL_PATH := $(call my-dir)
-LIBUSB_SRC := libusb
+
+VENDOR_PROTOCOL := vendor/protocol
+VENDOR_USB_INTERFACE := vendor/usb-interface
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := udal
-LOCAL_SRC_FILES := udal.c
+LOCAL_MODULE    := android_bridge
+LOCAL_SRC_FILES := android_bridge.c
 
-LOCAL_C_INCLUDES += $(LIBUSB_SRC)/libusb
-LOCAL_SHARED_LIBRARIES += libusb1.0
+LOCAL_C_INCLUDES += \
+	$(VENDOR_PROTOCOL)/src \
+	$(VENDOR_USB_INTERFACE)/src
+
+LOCAL_SHARED_LIBRARIES += usb_interface
 
 include $(BUILD_SHARED_LIBRARY)
 
-include $(LIBUSB_SRC)/android/jni/libusb.mk
+include $(VENDOR_USB_INTERFACE)/android/jni/usb_interface.mk
